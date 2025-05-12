@@ -114,12 +114,23 @@ export default function MemorizedPage() {
               </div>
             )}
           </CardContent>
-          <CardFooter className="flex justify-between">
-            <Button variant="outline" size="sm" onClick={handlePrevious} disabled={currentIndex === 0}>
+          <CardFooter className="flex flex-col sm:flex-row gap-2 sm:gap-0 sm:justify-between">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handlePrevious}
+              disabled={currentIndex === 0}
+              className="w-full sm:w-auto"
+            >
               <ChevronLeft className="h-4 w-4 mr-1" /> Previous
             </Button>
 
-            <Button variant="destructive" size="sm" onClick={handleRemove} className="flex items-center gap-1">
+            <Button
+              variant="destructive"
+              size="sm"
+              onClick={handleRemove}
+              className="flex items-center gap-1 w-full sm:w-auto"
+            >
               <Trash className="h-4 w-4" />
               Remove from Memorized
             </Button>
@@ -129,6 +140,7 @@ export default function MemorizedPage() {
               size="sm"
               onClick={handleNext}
               disabled={currentIndex === memorizedWordsList.length - 1}
+              className="w-full sm:w-auto"
             >
               Next <ChevronRight className="h-4 w-4 ml-1" />
             </Button>

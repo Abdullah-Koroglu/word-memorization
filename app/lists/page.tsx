@@ -20,20 +20,20 @@ export default function ListsPage() {
       <h1 className="text-3xl font-bold mb-8">Word Lists</h1>
       <p className="text-muted-foreground mb-8">Select a word list to practice</p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {wordLists.map((list) => (
           <Card
             key={list.id}
             className={`hover:shadow-md transition-shadow ${selectedList === list.id ? "border-primary" : ""}`}
           >
-            <CardHeader>
+            <CardHeader className="pb-2">
               <div className="flex justify-between items-start">
-                <CardTitle>{list.name}</CardTitle>
+                <CardTitle className="text-lg md:text-xl">{list.name}</CardTitle>
                 <Badge>{list.level}</Badge>
               </div>
               <CardDescription>{list.description}</CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="pb-2">
               <p className="text-sm">Category: {list.category}</p>
             </CardContent>
             <CardFooter>

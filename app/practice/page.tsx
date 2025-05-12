@@ -118,8 +118,14 @@ export default function PracticePage() {
               </div>
             )}
           </CardContent>
-          <CardFooter className="flex justify-between">
-            <Button variant="outline" size="sm" onClick={handlePrevious} disabled={currentIndex === 0}>
+          <CardFooter className="flex flex-col sm:flex-row gap-2 sm:gap-0 sm:justify-between">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handlePrevious}
+              disabled={currentIndex === 0}
+              className="w-full sm:w-auto"
+            >
               <ChevronLeft className="h-4 w-4 mr-1" /> Previous
             </Button>
 
@@ -127,13 +133,19 @@ export default function PracticePage() {
               variant={isMemorized(currentWord.id) ? "default" : "outline"}
               size="sm"
               onClick={toggleMemorized}
-              className="flex items-center gap-1"
+              className="flex items-center gap-1 w-full sm:w-auto"
             >
               <Check className="h-4 w-4" />
               {isMemorized(currentWord.id) ? "Memorized" : "Mark as Memorized"}
             </Button>
 
-            <Button variant="outline" size="sm" onClick={handleNext} disabled={currentIndex === words.length - 1}>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleNext}
+              disabled={currentIndex === words.length - 1}
+              className="w-full sm:w-auto"
+            >
               Next <ChevronRight className="h-4 w-4 ml-1" />
             </Button>
           </CardFooter>
