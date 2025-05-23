@@ -36,15 +36,23 @@ export default function PracticePage() {
   const listInfo = wordLists.find((list) => list.id === selectedList)
 
   const handleNext = () => {
-    if (currentIndex < words.length - 1) {
-      setCurrentIndex(currentIndex + 1)
+    if (words.length > 1) {
+      let nextIndex = currentIndex
+      while (nextIndex === currentIndex) {
+        nextIndex = Math.floor(Math.random() * words.length)
+      }
+      setCurrentIndex(nextIndex)
       setShowAnswer(false)
     }
   }
 
   const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1)
+    if (words.length > 1) {
+      let prevIndex = currentIndex
+      while (prevIndex === currentIndex) {
+        prevIndex = Math.floor(Math.random() * words.length)
+      }
+      setCurrentIndex(prevIndex)
       setShowAnswer(false)
     }
   }

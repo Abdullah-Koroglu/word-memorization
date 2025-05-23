@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Word Memorization App",
     short_name: "WordMemo",
     description: "Practice vocabulary between Turkish and English",
-    start_url: "/",
+    start_url: "/word-memorization/",
     display: "standalone",
     background_color: "#ffffff",
     theme_color: "#ffffff",
